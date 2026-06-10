@@ -1,0 +1,981 @@
+/* =========================
+   Global Reset + Base Style
+========================= */
+
+/* Remove default browser spacing and use border-box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Enables smooth scrolling when clicking nav links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base font, background color, and text color for the whole page */
+body {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  background: #a9d6e8;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* =========================
+   Navigation Bar
+========================= */
+
+/* Fixed navbar stays at the top while scrolling */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(169, 214, 232, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 22px rgba(31, 41, 55, 0.28);
+}
+
+/* Flexbox layout centers logo and links horizontally */
+.navbar {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Custom GM logo block with pink underline accent */
+.logo {
+  text-decoration: none;
+  background: #1f2937;
+  color: #ffffff;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  position: relative;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pink bar underneath the GM logo using a pseudo-element */
+.logo::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 6px;
+  background: #ff8fa3;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Logo lifts slightly on hover */
+.logo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(31, 41, 55, 0.25);
+}
+
+/* Horizontal nav link list with spacing between items */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 38px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Links turn pink on hover */
+.nav-links a:hover {
+  color: #e84f68;
+}
+
+/* Hamburger menu button — hidden on desktop, shown on mobile */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #111827;
+  cursor: pointer;
+}
+
+/* =========================
+   Section Layout
+========================= */
+
+/* Each section fills the full viewport height with consistent padding */
+.section {
+  min-height: 100vh;
+  padding: 120px 8% 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 35px;
+  color: #111827;
+  font-weight: 900;
+}
+
+/* Pink underline accent added below every section title */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ff8fa3;
+  margin: 12px auto 0;
+  border-radius: 999px;
+}
+
+/* Sections start hidden and slide up when scrolled into view via JS */
+.fade-section {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   Hero Section
+========================= */
+.hero {
+  background: #a9d6e8;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Avatar image in the hero area */
+.hero-avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  animation: floatAvatar 3s ease-in-out infinite;
+}
+
+/* Avatar gently floats up and down on a loop */
+@keyframes floatAvatar {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.intro-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 5px;
+}
+
+.hero h1 {
+  font-size: 4.6rem;
+  line-height: 1.1;
+  font-weight: 900;
+  color: #1f2937;
+}
+
+/* Pink uppercase subtitle below the main name */
+.hero h2 {
+  font-size: 0.95rem;
+  color: #e84f68;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-top: 8px;
+  margin-bottom: 30px;
+}
+
+.hero-description {
+  max-width: 760px;
+  margin: 0 auto 35px;
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+/* Shared button base styles — pill shape with smooth hover */
+.btn {
+  display: inline-block;
+  padding: 13px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.primary-btn {
+  background: #ff8fa3;
+  color: #1f2937;
+}
+
+.primary-btn:hover {
+  background: #e84f68;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.secondary-btn {
+  background: #ff8fa3;
+  color: #1f2937;
+  border: 2px solid #ff8fa3;
+}
+
+.secondary-btn:hover {
+  background: #e84f68;
+  color: #ffffff;
+  border-color: #e84f68;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   Social Icons
+========================= */
+
+/* Circular social icon links with a soft neumorphic shadow effect */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #a9d6e8;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.25rem;
+  box-shadow: 8px 8px 18px rgba(31, 41, 55, 0.25),
+              -8px -8px 18px rgba(255, 255, 255, 0.35);
+  transition: all 0.3s ease;
+}
+
+/* Icons lift and turn pink on hover */
+.social-icons a:hover {
+  transform: translateY(-6px);
+  color: #e84f68;
+}
+
+/* =========================
+   About Section
+========================= */
+
+/* Frosted glass-style card for the about content */
+.about-card {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 38px 45px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 143, 163, 0.45);
+  box-shadow: 0 14px 35px rgba(31, 41, 55, 0.12);
+  transition: all 0.35s ease;
+}
+
+.about-card:hover {
+  background: rgba(255, 143, 163, 0.16);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(31, 41, 55, 0.18);
+}
+
+/* Two-column layout: avatar on the left, text on the right */
+.about-wrap {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 35px;
+  align-items: start;
+  margin-bottom: 32px;
+}
+
+.about-avatar {
+  text-align: center;
+}
+
+/* Circular initials badge */
+.about-initials {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: rgba(255, 143, 163, 0.32);
+  border: 1px solid rgba(255, 143, 163, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1f2937;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.about-name {
+  display: block;
+  font-size: 0.78rem;
+  color: #4b5563;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.about-content {
+  text-align: left;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  color: #1f2937;
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Stat highlight cards below the about text */
+.about-stats {
+  border-top: 1px solid rgba(255, 143, 163, 0.45);
+  margin-top: 32px;
+  padding-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.about-stat {
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(255, 143, 163, 0.28);
+  border-radius: 12px;
+  padding: 15px 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.about-stat:hover {
+  background: rgba(255, 143, 163, 0.28);
+  transform: translateY(-4px);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.stat-label i {
+  color: #e84f68;
+  margin-right: 5px;
+}
+
+.stat-val {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+/* =========================
+   Skills Section
+========================= */
+.skills {
+  background: #a9d6e8;
+}
+
+/* 3-column grid of skill cards */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.65);
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  min-height: 190px;
+  border: 1px solid rgba(255, 143, 163, 0.35);
+  box-shadow: 0 10px 25px rgba(31, 41, 55, 0.08);
+  transition: all 0.35s ease;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-icon {
+  font-size: 2.4rem;
+  color: #ff8fa3;
+  margin-bottom: 16px;
+  transition: all 0.35s ease;
+}
+
+.skill-card h3 {
+  color: #1f2937;
+  font-size: 1.45rem;
+  font-weight: 900;
+  transition: all 0.35s ease;
+}
+
+/* Skill description is hidden by default and reveals on hover */
+.skill-card p {
+  color: #374151;
+  font-size: 1rem;
+  margin-top: 15px;
+  line-height: 1.6;
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(15px);
+  transition: all 0.35s ease;
+}
+
+/* Card turns pink and text slides in on hover */
+.skill-card:hover {
+  background: rgba(255, 143, 163, 0.85);
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(31, 41, 55, 0.15);
+}
+
+.skill-card:hover h3,
+.skill-card:hover p,
+.skill-card:hover .skill-icon {
+  color: #ffffff;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.12);
+}
+
+.skill-card:hover p {
+  opacity: 1;
+  max-height: 160px;
+  transform: translateY(0);
+}
+
+/* =========================
+   Projects Section
+========================= */
+.projects {
+  background: #a9d6e8;
+}
+
+/* 3-column project card grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.project-card {
+  background: #f9fafb;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: left;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(31, 41, 55, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Card border turns pink on hover */
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: #ff8fa3;
+  box-shadow: 0 14px 30px rgba(31, 41, 55, 0.15);
+}
+
+.project-card h3 {
+  font-size: 1.35rem;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+/* Tech stack label styled in pink */
+.project-tech {
+  color: #e84f68;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* Pill-shaped badge and action link at the bottom of project cards */
+.project-location,
+.project-action {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1f2937;
+  background: rgba(255, 143, 163, 0.35);
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+
+.project-action {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-location i,
+.project-action i {
+  color: #e84f68;
+  font-size: 1rem;
+}
+
+.project-action:hover {
+  background: #ff8fa3;
+  transform: translateY(-3px);
+}
+
+.project-action:hover i {
+  color: #ffffff;
+}
+
+/* Clickable video thumbnail with centered play button overlay */
+.video-thumbnail {
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(31, 41, 55, 0.12);
+}
+
+.video-thumbnail img {
+  width: 100%;
+  display: block;
+}
+
+/* Play button centered over the thumbnail using absolute positioning */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ff8fa3;
+  color: #1f2937;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 900;
+  box-shadow: 0 8px 20px rgba(31, 41, 55, 0.25);
+}
+
+.video-thumbnail:hover .play-button {
+  background: #e84f68;
+  color: #ffffff;
+}
+
+/* =========================
+   Resume Section
+========================= */
+.resume {
+  background: #a9d6e8;
+}
+
+/* Two-column layout: resume text on the left, preview image on the right */
+.resume-container {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.resume-text {
+  text-align: left;
+}
+
+.resume-text .section-title {
+  text-align: left;
+}
+
+/* Left-align the pink underline for this section */
+.resume-text .section-title::after {
+  margin-left: 0;
+}
+
+.resume-text p {
+  font-size: 1.1rem;
+  color: #1f2937;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.resume-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Resume preview card with frosted glass styling */
+.resume-preview {
+  background: rgba(255, 255, 255, 0.55);
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 143, 163, 0.35);
+  box-shadow: 0 14px 30px rgba(31, 41, 55, 0.16);
+  transition: all 0.35s ease;
+}
+
+.resume-preview:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px rgba(31, 41, 55, 0.2);
+}
+
+.resume-preview img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* =========================
+   Contact Section
+========================= */
+.contact {
+  background: #a9d6e8;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.contact-heading {
+  text-align: left;
+  margin-bottom: 70px;
+}
+
+.contact-title {
+  font-size: 2.8rem;
+  color: #111827;
+  font-weight: 900;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+/* Left-aligned pink underline for the contact title */
+.contact-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ff8fa3;
+  margin: 12px 0 0;
+  border-radius: 999px;
+}
+
+.contact-heading h3 {
+  font-weight: 500;
+}
+
+.contact-content {
+  text-align: center;
+}
+
+.contact-content h2 {
+  font-size: 1.7rem;
+  color: #1f2937;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.contact-subtitle {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  color: #4b5563;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.connect-text {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #1f2937;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+/* Circular contact icon links matching the hero social icons style */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-bottom: 35px;
+}
+
+.contact-icons a {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #a9d6e8;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.15rem;
+  box-shadow: 8px 8px 18px rgba(31, 41, 55, 0.22),
+              -8px -8px 18px rgba(255, 255, 255, 0.35);
+  transition: all 0.3s ease;
+}
+
+.contact-icons a:hover {
+  transform: translateY(-6px);
+  color: #e84f68;
+}
+
+/* Animated underline "Say Hi" call to action link */
+.say-hi {
+  display: inline-block;
+  text-decoration: none;
+  color: #ff6b6b;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 1rem;
+  padding-bottom: 8px;
+  border-bottom: 4px solid #ff6b6b;
+  transition: all 0.3s ease;
+}
+
+.say-hi span {
+  font-size: 1.4rem;
+  margin-left: 8px;
+}
+
+.say-hi:hover {
+  color: #e84f68;
+  border-bottom-color: #e84f68;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+  background: #111827;
+  color: #ffffff;
+  text-align: center;
+  padding: 22px;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+/* Tablets and smaller desktops */
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 3.4rem;
+  }
+
+  /* Switch skills and projects to 2 columns */
+  .skills-grid,
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-icons {
+    gap: 50px;
+  }
+}
+
+/* Stack about and resume sections to single column on medium screens */
+@media (max-width: 800px) {
+  .about-wrap,
+  .resume-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content,
+  .about-content p,
+  .resume-text,
+  .resume-text .section-title {
+    text-align: center;
+  }
+
+  /* Stack stat cards vertically on smaller screens */
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-text .section-title::after {
+    margin-left: auto;
+  }
+
+  .resume-buttons {
+    justify-content: center;
+  }
+}
+
+/* Mobile — show hamburger menu, stack all grids to 1 column */
+@media (max-width: 700px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  /* Nav links hidden by default, toggled open via JS on mobile */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(169, 214, 232, 0.98);
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    gap: 22px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .section {
+    padding: 110px 6% 70px;
+  }
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero h2 {
+    font-size: 0.95rem;
+  }
+
+  .section-title,
+  .contact-title {
+    font-size: 2.2rem;
+  }
+
+  .skills-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-icons {
+    gap: 25px;
+  }
+
+  .social-icons a {
+    width: 55px;
+    height: 55px;
+  }
+
+  .contact-heading {
+    margin-bottom: 55px;
+  }
+
+  .contact-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+
+  .contact-icons {
+    gap: 22px;
+  }
+}
+
+/* Small phones — stack hero buttons and reduce heading size */
+@media (max-width: 450px) {
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+  }
+}
