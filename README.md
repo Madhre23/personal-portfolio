@@ -32,6 +32,7 @@ Technical Skills
 Projects 
 Resume
 Contact
+
 **8. What is your career goal or desired role?**
 
 My career goal is to begin in an IT support, help desk, or technology internship role and continue growing toward systems administration and cloud infrastructure.
@@ -57,6 +58,7 @@ Yes, I will include my resume as a downloadable PDF. I also include a resume pre
 I will include my GitHub, LinkedIn, and email. The website also includes a “Say Hi” link that opens an email message.
 
 Part 2: Design
+
 **1. What overall style will best represent you?**
 
 A clean, modern, and professional style best represents me. Since the website is focused on technology and IT-related roles, I want it to look organized, readable, and professional while still showing personality.
@@ -106,6 +108,7 @@ Yes, I will use icons, images, and illustrations. The hero section includes a ca
 My design was inspired by modern single-page developer and IT portfolio websites. I liked websites that use a fixed navigation bar, a large hero section, clean section transitions, project cards, social icons, and simple contact sections. I also used inspiration from portfolio designs with a light blue background, bold headings, and interactive hover effects.
 
 Part 3: Interactivity
+
 **1. What interactive elements will your site include?**
 
 The site will include navigation links, buttons, hover effects, social media icons, clickable project demo thumbnail, a resume download button, and email contact links.
