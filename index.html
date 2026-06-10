@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Font used throughout the portfolio -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gursimarjot Madhre | Personal Portfolio</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome icons for social links, skills, and project details -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Fixed navigation bar for moving between portfolio sections -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="#home" class="logo">GM</a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Mobile menu button -->
+      <button class="menu-btn" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero section: first thing visitors see when the page loads -->
+  <section id="home" class="hero section">
+    <div class="hero-content">
+ 
+      <!-- Cartoon avatar with floating animation defined in CSS -->
+      <img src="assets/micah-1781025363509.svg" alt="Cartoon avatar of Gursimarjot Madhre" class="hero-avatar">
+ 
+      <p class="intro-text">Hi, I'm</p>
+      <h1>Gursimarjot Madhre</h1>
+      <h2>Computer Science Student</h2>
+ 
+      <p class="hero-description">
+        I am a Computer Science student at Queens College with a strong interest in
+        IT support, systems administration, cloud infrastructure, and web development.
+      </p>
+ 
+      <!-- CTA buttons scrolling to Projects and Contact sections -->
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary-btn">View Projects</a>
+        <a href="#contact" class="btn secondary-btn">Contact Me</a>
+      </div>
+ 
+      <!-- External links open in a new tab -->
+      <div class="social-icons">
+        <a href="https://github.com/Madhre23" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+ 
+        <a href="https://www.linkedin.com/in/gursimarjot-singh-866333251/" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+ 
+        <!-- mailto link opens the user's default email client -->
+        <a href="mailto:madhregursimarjot@gmail.com" aria-label="Email">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- About section: personal background and career focus -->
+  <section id="about" class="section about">
+    <div class="section-container">
+      <h2 class="section-title">About Me</h2>
+ 
+      <div class="about-card">
+        <div class="about-wrap">
+ 
+          <!-- Avatar column: initials circle + icon + label -->
+          <div class="about-avatar">
+            <div class="about-initials">GM</div>
+            <i class="fa-solid fa-laptop-code"></i>
+            <span class="about-name">CS Student<br>IT Infrastructure</span>
+          </div>
+ 
+          <!-- Text column: two paragraphs of personal intro -->
+          <div class="about-content">
+            <p>
+              I am currently pursuing a Bachelor of Arts in Computer Science at Queens College.
+              While studying computer science, I have shifted my focus toward the IT side of
+              technology, especially IT support, help desk operations, systems administration,
+              and cloud infrastructure. I enjoy applying my technical background to real-world
+              troubleshooting, user support, and system management.
+            </p>
+ 
+            <p>
+              Outside of my technical work, I am motivated to work in a field that encourages
+              lifelong learning and helps people through technical solutions. In my free time,
+              I enjoy staying up to date with technology, going to the gym, shooting hoops,
+              and playing video games.
+            </p>
+          </div>
+ 
+        </div>
+ 
+        <!-- Three quick-stat cards summarizing key credentials -->
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="stat-label"><i class="fa-solid fa-certificate"></i> Certified</span>
+            <span class="stat-val">CompTIA A+</span>
+          </div>
+ 
+          <div class="about-stat">
+            <span class="stat-label"><i class="fa-solid fa-server"></i> Home Lab</span>
+            <span class="stat-val">Active Directory</span>
+          </div>
+ 
+          <div class="about-stat">
+            <span class="stat-label"><i class="fa-solid fa-headset"></i> Experience</span>
+            <span class="stat-val">Tier 1 Help Desk</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Skills section: six cards that reveal descriptions on hover -->
+  <section id="skills" class="section skills">
+    <div class="section-container">
+      <h2 class="section-title">Technical Skills</h2>
+ 
+      <div class="skills-grid">
+ 
+        <div class="skill-card">
+          <i class="fa-solid fa-headset skill-icon"></i>
+          <h3>IT Support</h3>
+          <p>Hardware troubleshooting, desktops, laptops, printers, peripherals, and user support.</p>
+        </div>
+ 
+        <div class="skill-card">
+          <i class="fa-solid fa-server skill-icon"></i>
+          <h3>Systems</h3>
+          <p>Windows 10/11, Windows Server 2022, Active Directory, Group Policy, and RDP.</p>
+        </div>
+ 
+        <div class="skill-card">
+          <i class="fa-solid fa-network-wired skill-icon"></i>
+          <h3>Networking</h3>
+          <p>IP addressing, routers, switches, Wi-Fi, gateways, LAN/WAN, TCP/IP, and VPN concepts.</p>
+        </div>
+ 
+        <div class="skill-card">
+          <i class="fa-solid fa-code skill-icon"></i>
+          <h3>Web Development</h3>
+          <p>HTML, CSS, JavaScript, responsive web design, Git, and basic database experience.</p>
+        </div>
+ 
+        <div class="skill-card">
+          <i class="fa-solid fa-screwdriver-wrench skill-icon"></i>
+          <h3>Tools</h3>
+          <p>Microsoft 365, VirtualBox, GitHub, Spiceworks, and ServiceNow concepts.</p>
+        </div>
+ 
+        <div class="skill-card">
+          <i class="fa-solid fa-certificate skill-icon"></i>
+          <h3>Certification</h3>
+          <p>CompTIA A+ certified with a focus on support, hardware, operating systems, and troubleshooting.</p>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Projects section: AD lab, law office site, and volunteer work -->
+  <section id="projects" class="section projects">
+    <div class="section-container">
+      <h2 class="section-title">Projects</h2>
+ 
+      <div class="project-grid">
+ 
+        <!-- Project 1: Active Directory home lab -->
+        <div class="project-card">
+          <h3>Active Directory Home Lab Simulation</h3>
+          <p class="project-tech">Active Directory | VirtualBox | Spiceworks | Windows Server</p>
+ 
+          <p>
+            Built a Windows Server 2022 Active Directory environment to practice user account
+            management, role-based access controls, password resets, account lockouts, and
+            help desk ticket troubleshooting.
+          </p>
+ 
+          <!-- Links to the GitHub repo where documentation is stored -->
+          <a href="https://github.com/Madhre23/Active-Directory-Helpdesk-Lab" 
+             target="_blank" 
+             class="project-action">
+            <i class="fa-brands fa-github"></i>
+            View Documentation
+          </a>
+        </div>
+ 
+        <!-- Project 2: East West Law Office website -->
+        <div class="project-card">
+          <h3>East West Law Office Website</h3>
+          <p class="project-tech">HTML | CSS | JavaScript | Responsive Web Design | Git</p>
+ 
+          <p>
+            Developed a responsive website using HTML, CSS, and JavaScript. The project focused
+            on professional branding, clean layout, user-friendly design, and version control
+            collaboration.
+          </p>
+ 
+          <!-- Thumbnail image links to a Google Drive demo video -->
+          <a href="https://drive.google.com/file/d/1oNBZz3kWLZ23zTtblyIf5oYPxZksik5_/view" 
+             target="_blank" 
+             class="video-thumbnail">
+ 
+            <img src="assets/image1.png" 
+                 alt="East West Law Office website demo thumbnail">
+ 
+            <!-- Play icon overlaid on the thumbnail using absolute positioning in CSS -->
+            <span class="play-button">▶</span>
+          </a>
+        </div>
+ 
+        <!-- Project 3: Volunteer IT/AV support for community events -->
+        <div class="project-card">
+          <h3>Sikh Cultural Society Livestream Support</h3>
+          <p class="project-tech">Technical Support | Audio/Video | Troubleshooting</p>
+ 
+          <p>
+            Provided volunteer technical support for livestream operations by assisting with
+            audio/video setup, equipment troubleshooting, and on-site support during live events
+            in a community environment.
+          </p>
+ 
+          <!-- Location badge instead of a link since this was an in-person role -->
+          <p class="project-location">
+            <i class="fa-solid fa-location-dot"></i>
+            South Richmond Hill, NY
+          </p>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Resume section: download button and a visual preview of the PDF -->
+  <section id="resume" class="section resume">
+    <div class="resume-container">
+      
+      <div class="resume-text">
+        <h2 class="section-title">Resume</h2>
+ 
+        <p>
+          My resume highlights my education, technical skills, IT support background,
+          Active Directory home lab, and web development projects.
+        </p>
+ 
+        <!-- download attribute triggers a file save instead of opening in the browser -->
+        <div class="resume-buttons">
+          <a href="assets/GM_Resume.pdf" download class="btn secondary-btn">
+            Download Resume
+          </a>
+        </div>
+      </div>
+ 
+      <!-- Static image preview of the resume PDF -->
+      <div class="resume-preview">
+        <img src="assets/image.png" alt="Preview of Gursimarjot Madhre resume">
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <!-- Contact section: social links and a pre-filled mailto link -->
+  <section id="contact" class="section contact">
+    <div class="contact-container">
+ 
+      <div class="contact-heading">
+        <h2 class="contact-title">Contact</h2>
+        <h3>Get In Touch</h3>
+      </div>
+ 
+      <div class="contact-content">
+        <h2>Gursimarjot Madhre</h2>
+ 
+        <p class="contact-subtitle">
+          Looking for IT/CS related internships.
+        </p>
+ 
+        <p class="connect-text">Connect With Me</p>
+ 
+        <!-- Icon links to LinkedIn and email -->
+        <div class="contact-icons">
+          <a href="https://www.linkedin.com/in/gursimarjot-singh-866333251/" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+ 
+          <a href="mailto:madhregursimarjot@gmail.com" aria-label="Email">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+        </div>
+ 
+        <!-- Pre-filled mailto with a subject and body to make it easy for recruiters -->
+        <a href="mailto:madhregursimarjot@gmail.com?subject=Portfolio%20Contact&body=Hi%20Gursimarjot,%0D%0A%0D%0AI%20saw%20your%20portfolio%20and%20wanted%20to%20connect."
+           class="say-hi">
+          Say Hi <span>→</span>
+        </a>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <!-- Footer with copyright -->
+  <footer class="footer">
+    <p>&copy; 2026 Gursimarjot Madhre. All Rights Reserved.</p>
+  </footer>
+ 
+  <!-- JavaScript for mobile menu toggle and scroll fade animations -->
+  <script src="script.js"></script>
+</body>
+</html>
