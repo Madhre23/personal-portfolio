@@ -6,7 +6,7 @@ Gursimarjot Madhre
 
 The purpose of my portfolio website is to present my professional background, technical skills, projects, resume, and contact information in one organized place. It allows employers, recruiters, and professional connections to quickly understand who I am, what I have worked on, and what type of technology role I am pursuing.
 
-**3. Who is the target audience?****
+**3. Who is the target audience?**
 
 The target audience includes employers, recruiters, hiring managers, professors, classmates, and professional connections. The website is mainly intended for people reviewing me for IT support, help desk, systems administration, cloud infrastructure, or entry-level technology opportunities.
 
@@ -26,12 +26,54 @@ I am a Computer Science student at Queens College who has shifted my focus towar
 
 My website will be a single-page scrolling portfolio with the following sections:
 
-Home
-About Me
-Technical Skills
-Projects 
-Resume
-Contact
+Wireframe Design
+
+The website will use a single-page scrolling layout. Each section will appear as the user scrolls down the page.
+
+Home Section
+
+[Fixed Navigation Bar]
+[Avatar]
+[Name and Title]
+[Short Introduction]
+[View Projects Button] [Contact Me Button]
+[GitHub Icon] [LinkedIn Icon] [Email Icon]
+
+About Section
+
+[About Me Heading]
+[Bio Card]
+[GM Identity Badge]
+[Professional Background Text]
+[Quick Highlights: CompTIA A+, Active Directory, Tier 1 Help Desk]
+
+Skills Section
+
+[Technical Skills Heading]
+[Skill Card: IT Support] [Skill Card: Systems] [Skill Card: Networking]
+[Skill Card: Web Development] [Skill Card: Tools] [Skill Card: Certification]
+
+Projects Section
+
+[Projects Heading]
+[Active Directory Home Lab Card]
+[East West Law Office Website Card with Demo Thumbnail]
+[Sikh Cultural Society Livestream Support Card]
+
+Resume Section
+
+[Resume Heading]
+[Resume Description]
+[Download Resume Button]
+[Resume Preview Image]
+
+Contact Section
+
+[Contact Heading]
+[Name]
+[Short Contact Statement]
+[LinkedIn Icon] [Email Icon]
+[Say Hi Email Link]
 
 **8. What is your career goal or desired role?**
 
@@ -128,3 +170,11 @@ Users will receive feedback through hover effects on buttons, cards, icons, and 
 **5. How does interactivity improve the user experience?**
 
 Interactivity improves the user experience by making the website feel more responsive, polished, and engaging. It helps visitors understand what they can click, makes the content easier to explore, and creates a smoother experience while navigating the portfolio.
+
+## External Resources Used
+
+- Google Fonts: Montserrat
+- Font Awesome Icons
+- Avatar generator used for cartoon avatar: https://www.dicebear.com/
+- Google Drive for East West Law Office demo video
+- GitHub Pages documentation
